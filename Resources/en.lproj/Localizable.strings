@@ -1,1 +1,12 @@
 View.title="Countries";
+View.search="Search";
+View.type="Search by";
+View.typeName="Name";
+View.typeCapital="Capital";
+View.typeLanguage="Language";
+View.typeRegion="Region";
+View.typeCurrency="Currency";
+View.order="Order by";
+View.orderCloser="Closer";
+View.orderFurther="Further";
+View.orderName="Name";
