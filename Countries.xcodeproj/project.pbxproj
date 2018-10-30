@@ -17,6 +17,10 @@
 		DA7A562521872E8F00755D8B /* libCountries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7A560E21872BCC00755D8B /* libCountries.a */; };
 		DA7BDAC52188E2E300063EEE /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = DA7BDAC42188E2E300063EEE /* Countries.json */; };
 		DA7BDAC62188E2E300063EEE /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = DA7BDAC42188E2E300063EEE /* Countries.json */; };
+		DA7BDAC82188E49800063EEE /* TestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BDAC72188E49800063EEE /* TestParser.swift */; };
+		DA7BDACA2188E57500063EEE /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BDAC92188E57500063EEE /* Country.swift */; };
+		DA7BDACC2188E7FB00063EEE /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BDACB2188E7FB00063EEE /* Language.swift */; };
+		DA7BDACE2188E85D00063EEE /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BDACD2188E85D00063EEE /* Currency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		DA7A561E21872C6600755D8B /* Catalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		DA7A562121872D1100755D8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA7BDAC42188E2E300063EEE /* Countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
+		DA7BDAC72188E49800063EEE /* TestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestParser.swift; sourceTree = "<group>"; };
+		DA7BDAC92188E57500063EEE /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		DA7BDACB2188E7FB00063EEE /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		DA7BDACD2188E85D00063EEE /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				DA7A561B21872C5F00755D8B /* TestSearch.swift */,
+				DA7BDAC72188E49800063EEE /* TestParser.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -128,6 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				DA7A561E21872C6600755D8B /* Catalog.swift */,
+				DA7BDAC92188E57500063EEE /* Country.swift */,
+				DA7BDACB2188E7FB00063EEE /* Language.swift */,
+				DA7BDACD2188E85D00063EEE /* Currency.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -260,6 +272,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA7BDACE2188E85D00063EEE /* Currency.swift in Sources */,
+				DA7BDACC2188E7FB00063EEE /* Language.swift in Sources */,
+				DA7BDACA2188E57500063EEE /* Country.swift in Sources */,
 				DA7A561F21872C6700755D8B /* Catalog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA7BDAC82188E49800063EEE /* TestParser.swift in Sources */,
 				DA7A561C21872C5F00755D8B /* TestSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
