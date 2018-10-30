@@ -1,5 +1,5 @@
 import Foundation
 
-public struct Language:Codable {
+public struct Language:Decodable {
     public internal(set) var name = String()
 }

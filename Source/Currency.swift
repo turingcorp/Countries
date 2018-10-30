@@ -1,5 +1,5 @@
 import Foundation
 
-public struct Currency:Codable {
+public struct Currency:Decodable {
     public internal(set) var name = String()
 }
