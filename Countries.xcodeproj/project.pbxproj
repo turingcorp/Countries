@@ -25,6 +25,10 @@
 		DA7BDAD22189086E00063EEE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BDAD12189086E00063EEE /* Item.swift */; };
 		DA7BDAD421890B2C00063EEE /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BDAD321890B2C00063EEE /* Cell.swift */; };
 		DA7BDAD62189105200063EEE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BDAD52189105200063EEE /* String.swift */; };
+		DA7BDAD8218915E900063EEE /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BDAD7218915E900063EEE /* Search.swift */; };
+		DA7BDADA2189162100063EEE /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BDAD92189162100063EEE /* Delegate.swift */; };
+		DA7BDADC2189167900063EEE /* MockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BDADB2189167900063EEE /* MockDelegate.swift */; };
+		DA7BDADE2189170900063EEE /* TestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BDADD2189170900063EEE /* TestDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		DA7BDAD12189086E00063EEE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		DA7BDAD321890B2C00063EEE /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		DA7BDAD52189105200063EEE /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		DA7BDAD7218915E900063EEE /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		DA7BDAD92189162100063EEE /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
+		DA7BDADB2189167900063EEE /* MockDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDelegate.swift; sourceTree = "<group>"; };
+		DA7BDADD2189170900063EEE /* TestDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +149,8 @@
 			children = (
 				DA7A561B21872C5F00755D8B /* TestSearch.swift */,
 				DA7BDAC72188E49800063EEE /* TestParser.swift */,
+				DA7BDADD2189170900063EEE /* TestDelegate.swift */,
+				DA7BDADB2189167900063EEE /* MockDelegate.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -149,9 +159,11 @@
 			isa = PBXGroup;
 			children = (
 				DA7A561E21872C6600755D8B /* Catalog.swift */,
+				DA7BDAD92189162100063EEE /* Delegate.swift */,
 				DA7BDAC92188E57500063EEE /* Country.swift */,
 				DA7BDACB2188E7FB00063EEE /* Language.swift */,
 				DA7BDACD2188E85D00063EEE /* Currency.swift */,
+				DA7BDAD7218915E900063EEE /* Search.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -284,8 +296,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA7BDADA2189162100063EEE /* Delegate.swift in Sources */,
 				DA7BDACE2188E85D00063EEE /* Currency.swift in Sources */,
 				DA7BDACC2188E7FB00063EEE /* Language.swift in Sources */,
+				DA7BDAD8218915E900063EEE /* Search.swift in Sources */,
 				DA7BDACA2188E57500063EEE /* Country.swift in Sources */,
 				DA7A561F21872C6700755D8B /* Catalog.swift in Sources */,
 			);
@@ -295,7 +309,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA7BDADE2189170900063EEE /* TestDelegate.swift in Sources */,
 				DA7BDAC82188E49800063EEE /* TestParser.swift in Sources */,
+				DA7BDADC2189167900063EEE /* MockDelegate.swift in Sources */,
 				DA7A561C21872C5F00755D8B /* TestSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
