@@ -10,3 +10,5 @@ View.order="Order by";
 View.orderCloser="Closer";
 View.orderFurther="Further";
 View.orderName="Name";
+Presenter.population="\nPopulation: ";
+Presenter.area="\nArea: ";

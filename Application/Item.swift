@@ -1,9 +1,7 @@
 import UIKit
 
-struct Item {
-    var name = String()
-    var population = String()
-    var area = String()
+class Item {
+    var text = NSAttributedString()
     var flagURL:URL?
-    var flagImage:UIImage?
+    var flagImage:String?
 }

@@ -2,8 +2,8 @@ import UIKit
 
 class View:UIViewController,
     UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
-    private weak var collection:UICollectionView?
-    private var items = [Item]() { didSet { collection?.reloadData() } }
+    private weak var collection:UICollectionView!
+    private var items = [Item]() { didSet { collection.reloadData() } }
     private let presenter = Presenter()
     
     override func viewDidLoad() {
@@ -11,6 +11,7 @@ class View:UIViewController,
         title = .local("View.title")
         presenter.itemsUpdated = { [weak self] items in self?.items = items }
         makeOutlets()
+        presenter.load()
     }
     
     func searchBar(_:UISearchBar, textDidChange text:String) {
@@ -20,8 +21,12 @@ class View:UIViewController,
     func searchBarSearchButtonClicked(_ search:UISearchBar) { search.resignFirstResponder() }
     func collectionView(_:UICollectionView, numberOfItemsInSection:Int) -> Int { return items.count }
     
+    func collectionView(_:UICollectionView, layout:UICollectionViewLayout, sizeForItemAt:IndexPath) -> CGSize {
+        return CGSize(width:view.bounds.width, height:120)
+    }
+    
     func collectionView(_:UICollectionView, cellForItemAt index:IndexPath) -> UICollectionViewCell {
-        let cell = collection?.dequeueReusableCell(withReuseIdentifier:"cell", for:index) as! Cell
+        let cell = collection.dequeueReusableCell(withReuseIdentifier:"cell", for:index) as! Cell
         cell.item = items[index.item]
         return cell
     }
@@ -64,8 +69,8 @@ class View:UIViewController,
         view.addSubview(search)
         
         let flow = UICollectionViewFlowLayout()
-        flow.sectionInset = .zero
-        flow.minimumLineSpacing = 1
+        flow.sectionInset = UIEdgeInsets(top:2, left:0, bottom:2, right:0)
+        flow.minimumLineSpacing = 2
         flow.minimumInteritemSpacing = 0
         
         let collection = UICollectionView(frame:.zero, collectionViewLayout:flow)
