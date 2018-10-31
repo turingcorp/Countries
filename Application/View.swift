@@ -1,9 +1,11 @@
 import UIKit
+import CoreLocation
 
-class View:UIViewController,
-    UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class View:UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,
+UISearchBarDelegate, CLLocationManagerDelegate {
     private weak var collection:UICollectionView!
     private var items = [Item]() { didSet { collection.reloadData() } }
+    private let location = CLLocationManager()
     private let presenter = Presenter()
     
     override func viewDidLoad() {
@@ -12,6 +14,13 @@ class View:UIViewController,
         presenter.itemsUpdated = { [weak self] items in self?.items = items }
         makeOutlets()
         presenter.load()
+        location.delegate = self
+        location.requestWhenInUseAuthorization()
+    }
+    
+    override func viewDidAppear(_ animated:Bool) {
+        super.viewDidAppear(animated)
+        checkStatus()
     }
     
     func searchBar(_:UISearchBar, textDidChange text:String) {
@@ -29,6 +38,20 @@ class View:UIViewController,
         let cell = collection.dequeueReusableCell(withReuseIdentifier:"cell", for:index) as! Cell
         cell.item = items[index.item]
         return cell
+    }
+    
+    func locationManager(_:CLLocationManager, didChangeAuthorization status:CLAuthorizationStatus) {
+        if status != .notDetermined {
+            checkStatus()
+        }
+    }
+    
+    func locationManager(_:CLLocationManager, didUpdateLocations locations:[CLLocation]) {
+        if let coordinates = locations.last {
+            location.stopUpdatingLocation()
+            location.delegate = nil
+            presenter.updated(location:coordinates)
+        }
     }
     
     private func makeOutlets() {
@@ -112,5 +135,21 @@ class View:UIViewController,
         } else {
             collection.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
         }
+    }
+    
+    private func checkStatus() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways, .authorizedWhenInUse, .restricted: requestLocation()
+        case .denied: presenter.locationDenied()
+        case .notDetermined:
+            location.delegate = self
+            location.requestWhenInUseAuthorization()
+        }
+    }
+    
+    private func requestLocation() {
+        location.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        location.distanceFilter = 1000
+        location.startUpdatingLocation()
     }
 }

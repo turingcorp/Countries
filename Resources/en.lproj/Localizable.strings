@@ -12,3 +12,5 @@ View.orderFurther="Further";
 View.orderName="Name";
 Presenter.population="\nPopulation: ";
 Presenter.area="\nArea: ";
+Presenter.locationDenied="Location was denied, we are unable to show the closest countries";
+Presenter.continue="Continue";

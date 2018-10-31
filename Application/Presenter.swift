@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 import Countries
 
 class Presenter:Delegate {
@@ -22,6 +23,16 @@ class Presenter:Delegate {
                 self?.itemsUpdated?(items)
             }
         }
+    }
+    
+    func locationDenied() {
+        let alert = UIAlertController(title:.local("Presenter.locationDenied"), message:nil, preferredStyle:.alert)
+        alert.addAction(UIAlertAction(title:.local("Presenter.continue"), style:.default, handler:nil))
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated:true)
+    }
+    
+    func updated(location:CLLocation) {
+        catalog.location = location
     }
     
     private func makeItems() -> [Item] {
