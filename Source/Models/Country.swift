@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Country:Decodable {
+public class Country:Decodable {
     public internal(set) var name = String()
     public internal(set) var flag = String()
     public internal(set) var population = 0
