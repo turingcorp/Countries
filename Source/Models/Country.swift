@@ -11,4 +11,5 @@ public class Country:Decodable {
     var latlng = [Double]()
     var languages = [Language]()
     var currencies = [Currency]()
+    var distance:Double!
 }

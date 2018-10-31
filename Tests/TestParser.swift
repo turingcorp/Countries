@@ -8,6 +8,7 @@ class TestParser:XCTestCase {
     override func setUp() {
         data = try! Data(contentsOf:Bundle(for:TestParser.self).url(forResource:"Countries", withExtension:"json")!)
         catalog = Catalog()
+        catalog.orderByName()
     }
     
     func testTotalCountries() {
@@ -38,5 +39,6 @@ class TestParser:XCTestCase {
         XCTAssertEqual("German", catalog.countries[84].languages[0].name)
         XCTAssertEqual(1, catalog.countries[84].currencies.count)
         XCTAssertEqual("Euro", catalog.countries[84].currencies[0].name)
+        XCTAssertNotNil(catalog.countries[84].distance)
     }
 }

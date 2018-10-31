@@ -8,6 +8,7 @@ class TestSearch:XCTestCase {
         catalog = Catalog()
         catalog.load(data:try! Data(contentsOf:
             Bundle(for:TestSearch.self).url(forResource:"Countries", withExtension:"json")!))
+        catalog.orderByName()
     }
     
     func testNoQuery() {

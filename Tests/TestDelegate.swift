@@ -1,4 +1,5 @@
 import XCTest
+import CoreLocation
 @testable import Countries
 
 class TestDelegate:XCTestCase {
@@ -31,6 +32,20 @@ class TestDelegate:XCTestCase {
         let expect = expectation(description:String())
         delegate.onUpdated = { expect.fulfill() }
         catalog.searchByCapital()
+        waitForExpectations(timeout:1)
+    }
+    
+    func testNotifyOnOrderChange() {
+        let expect = expectation(description:String())
+        delegate.onUpdated = { expect.fulfill() }
+        catalog.orderByName()
+        waitForExpectations(timeout:1)
+    }
+    
+    func testNotifyOnLocationChange() {
+        let expect = expectation(description:String())
+        delegate.onUpdated = { expect.fulfill() }
+        catalog.location = CLLocation(latitude:0, longitude:0)
         waitForExpectations(timeout:1)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA16C1692189CF9800F893E6 /* TestOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA16C1682189CF9800F893E6 /* TestOrder.swift */; };
 		DA4A692D2189B4650087FA01 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A692C2189B4650087FA01 /* Order.swift */; };
 		DA4A69332189B62B0087FA01 /* NameSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A69322189B62B0087FA01 /* NameSearch.swift */; };
 		DA4A69352189B63B0087FA01 /* CapitalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A69342189B63B0087FA01 /* CapitalSearch.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DA16C1682189CF9800F893E6 /* TestOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOrder.swift; sourceTree = "<group>"; };
 		DA4A692C2189B4650087FA01 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		DA4A69322189B62B0087FA01 /* NameSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSearch.swift; sourceTree = "<group>"; };
 		DA4A69342189B63B0087FA01 /* CapitalSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapitalSearch.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				DA7A561B21872C5F00755D8B /* TestSearch.swift */,
+				DA16C1682189CF9800F893E6 /* TestOrder.swift */,
 				DA7BDAC72188E49800063EEE /* TestParser.swift */,
 				DA7BDADD2189170900063EEE /* TestDelegate.swift */,
 				DA7BDADB2189167900063EEE /* MockDelegate.swift */,
@@ -379,6 +382,7 @@
 			files = (
 				DA7BDADE2189170900063EEE /* TestDelegate.swift in Sources */,
 				DA7BDAC82188E49800063EEE /* TestParser.swift in Sources */,
+				DA16C1692189CF9800F893E6 /* TestOrder.swift in Sources */,
 				DA7BDADC2189167900063EEE /* MockDelegate.swift in Sources */,
 				DA7A561C21872C5F00755D8B /* TestSearch.swift in Sources */,
 			);
