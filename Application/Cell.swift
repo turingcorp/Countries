@@ -3,6 +3,7 @@ import WebKit
 
 class Cell:UICollectionViewCell {
     var item = Item() { didSet {
+        accessibilityLabel = item.text.string
         text.attributedText = item.text
         updateFlag()
     } }
@@ -13,6 +14,8 @@ class Cell:UICollectionViewCell {
         super.init(frame:frame)
         backgroundColor = .white
         isUserInteractionEnabled = false
+        accessibilityHint = .local("Cell.hint")
+        isAccessibilityElement = true
         makeOutlets()
     }
     

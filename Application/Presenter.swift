@@ -83,6 +83,7 @@ class Presenter:Delegate {
         } else {
             area += formatter.string(from:NSNumber(value:country.area)) ?? String()
         }
+        area += "."
         text.append(NSAttributedString(string:area))
         return text
     }

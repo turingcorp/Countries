@@ -59,6 +59,7 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         typeTitle.translatesAutoresizingMaskIntoConstraints = false
         typeTitle.text = .local("View.type")
         typeTitle.isUserInteractionEnabled = false
+        typeTitle.accessibilityHint = .local("View.typeHint")
         view.addSubview(typeTitle)
         
         let types:[String] = [.local("View.typeName"), .local("View.typeCapital"), .local("View.typeLanguage"),
@@ -73,6 +74,7 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         orderTitle.translatesAutoresizingMaskIntoConstraints = false
         orderTitle.text = .local("View.order")
         orderTitle.isUserInteractionEnabled = false
+        orderTitle.accessibilityHint = .local("View.orderHint")
         view.addSubview(orderTitle)
         
         let orders:[String] = [.local("View.orderCloser"), .local("View.orderFurther"), .local("View.orderName")]
@@ -91,6 +93,8 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         search.spellCheckingType = .yes
         search.keyboardType = .asciiCapable
         search.delegate = self
+        search.accessibilityLabel = .local("View.searchLabel")
+        search.accessibilityHint = .local("View.searchHint")
         view.addSubview(search)
         
         let flow = UICollectionViewFlowLayout()
