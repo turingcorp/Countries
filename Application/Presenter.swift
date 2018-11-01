@@ -69,7 +69,7 @@ class Presenter:Delegate {
     private func makeText(country:Country) -> NSAttributedString {
         let text = NSMutableAttributedString()
         text.append(NSAttributedString(string:country.name,
-                                       attributes:[.font:UIFont.systemFont(ofSize:20, weight:.bold)]))
+                                       attributes:[.font:UIFont.preferredFont(forTextStyle:.title1)]))
         if let population = formatter.string(from:NSNumber(value:country.population)) {
             text.append(NSAttributedString(string:String.local("Presenter.population") + population))
         }

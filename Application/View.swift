@@ -60,6 +60,10 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         typeTitle.text = .local("View.type")
         typeTitle.isUserInteractionEnabled = false
         typeTitle.accessibilityHint = .local("View.typeHint")
+        typeTitle.font = .preferredFont(forTextStyle:.title2)
+        if #available(iOS 10.0, *) {
+            typeTitle.adjustsFontForContentSizeCategory = true
+        }
         view.addSubview(typeTitle)
         
         let types:[String] = [.local("View.typeName"), .local("View.typeCapital"), .local("View.typeLanguage"),
@@ -75,6 +79,10 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         orderTitle.text = .local("View.order")
         orderTitle.isUserInteractionEnabled = false
         orderTitle.accessibilityHint = .local("View.orderHint")
+        orderTitle.font = .preferredFont(forTextStyle:.title2)
+        if #available(iOS 10.0, *) {
+            orderTitle.adjustsFontForContentSizeCategory = true
+        }
         view.addSubview(orderTitle)
         
         let orders:[String] = [.local("View.orderCloser"), .local("View.orderFurther"), .local("View.orderName")]

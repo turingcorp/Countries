@@ -26,6 +26,10 @@ class Cell:UICollectionViewCell {
         text.translatesAutoresizingMaskIntoConstraints = false
         text.isUserInteractionEnabled = false
         text.numberOfLines = 0
+        text.font = .preferredFont(forTextStyle:.body)
+        if #available(iOS 10.0, *) {
+            text.adjustsFontForContentSizeCategory = true
+        }
         contentView.addSubview(text)
         self.text = text
 
