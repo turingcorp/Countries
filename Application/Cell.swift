@@ -26,7 +26,7 @@ class Cell:UICollectionViewCell {
         text.translatesAutoresizingMaskIntoConstraints = false
         text.isUserInteractionEnabled = false
         text.numberOfLines = 0
-        text.font = .preferredFont(forTextStyle:.body)
+        text.font = .preferredFont(forTextStyle:.caption1)
         if #available(iOS 10.0, *) {
             text.adjustsFontForContentSizeCategory = true
         }

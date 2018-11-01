@@ -32,11 +32,17 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         presenter.updated(query:text)
     }
     
+    func searchBarCancelButtonClicked(_ search:UISearchBar) {
+        search.resignFirstResponder()
+        search.text = String()
+        presenter.updated(query:String())
+    }
+    
     func searchBarSearchButtonClicked(_ search:UISearchBar) { search.resignFirstResponder() }
     func collectionView(_:UICollectionView, numberOfItemsInSection:Int) -> Int { return items.count }
     
     func collectionView(_:UICollectionView, layout:UICollectionViewLayout, sizeForItemAt:IndexPath) -> CGSize {
-        return CGSize(width:view.bounds.width, height:130)
+        return CGSize(width:view.bounds.width, height:100)
     }
     
     func collectionView(_:UICollectionView, cellForItemAt index:IndexPath) -> UICollectionViewCell {
@@ -65,7 +71,7 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         typeTitle.text = .local("View.type")
         typeTitle.isUserInteractionEnabled = false
         typeTitle.accessibilityHint = .local("View.typeHint")
-        typeTitle.font = .preferredFont(forTextStyle:.title3)
+        typeTitle.font = .preferredFont(forTextStyle:.caption1)
         if #available(iOS 10.0, *) {
             typeTitle.adjustsFontForContentSizeCategory = true
         }
@@ -84,7 +90,7 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         orderTitle.text = .local("View.order")
         orderTitle.isUserInteractionEnabled = false
         orderTitle.accessibilityHint = .local("View.orderHint")
-        orderTitle.font = .preferredFont(forTextStyle:.title3)
+        orderTitle.font = .preferredFont(forTextStyle:.caption1)
         if #available(iOS 10.0, *) {
             orderTitle.adjustsFontForContentSizeCategory = true
         }
@@ -106,6 +112,7 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         search.spellCheckingType = .yes
         search.keyboardType = .asciiCapable
         search.delegate = self
+        search.showsCancelButton = true
         search.accessibilityLabel = .local("View.searchLabel")
         search.accessibilityHint = .local("View.searchHint")
         view.addSubview(search)
@@ -131,7 +138,7 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         type.topAnchor.constraint(equalTo:typeTitle.bottomAnchor, constant:5).isActive = true
         type.leftAnchor.constraint(equalTo:view.leftAnchor, constant:5).isActive = true
         type.rightAnchor.constraint(equalTo:view.rightAnchor, constant:-5).isActive = true
-        type.heightAnchor.constraint(equalToConstant:34).isActive = true
+        type.heightAnchor.constraint(equalToConstant:32).isActive = true
         
         orderTitle.topAnchor.constraint(equalTo:type.bottomAnchor, constant:20).isActive = true
         orderTitle.leftAnchor.constraint(equalTo:view.leftAnchor, constant:20).isActive = true
@@ -139,7 +146,7 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         order.topAnchor.constraint(equalTo:orderTitle.bottomAnchor, constant:5).isActive = true
         order.leftAnchor.constraint(equalTo:view.leftAnchor, constant:20).isActive = true
         order.rightAnchor.constraint(equalTo:view.rightAnchor, constant:-20).isActive = true
-        order.heightAnchor.constraint(equalToConstant:34).isActive = true
+        order.heightAnchor.constraint(equalToConstant:32).isActive = true
         
         search.topAnchor.constraint(equalTo:order.bottomAnchor, constant:20).isActive = true
         search.leftAnchor.constraint(equalTo:view.leftAnchor, constant:10).isActive = true
