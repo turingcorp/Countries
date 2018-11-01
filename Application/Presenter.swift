@@ -35,6 +35,28 @@ class Presenter:Delegate {
         catalog.location = location
     }
     
+    func updated(query:String) {
+        catalog.query = query
+    }
+    
+    @objc func updated(type:UISegmentedControl) {
+        switch type.selectedSegmentIndex {
+        case 1: catalog.searchByCapital()
+        case 2: catalog.searchByLanguage()
+        case 3: catalog.searchByRegion()
+        case 4: catalog.searchByCurrency()
+        default: catalog.searchByName()
+        }
+    }
+    
+    @objc func updated(order:UISegmentedControl) {
+        switch order.selectedSegmentIndex {
+        case 1: catalog.orderByFurther()
+        case 2: catalog.orderByName()
+        default: catalog.orderByCloser()
+        }
+    }
+    
     private func makeItems() -> [Item] {
         return catalog.countries.map { country in
             let item = Item()

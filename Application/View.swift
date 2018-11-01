@@ -24,7 +24,7 @@ UISearchBarDelegate, CLLocationManagerDelegate {
     }
     
     func searchBar(_:UISearchBar, textDidChange text:String) {
-        
+        presenter.updated(query:text)
     }
     
     func searchBarSearchButtonClicked(_ search:UISearchBar) { search.resignFirstResponder() }
@@ -66,6 +66,7 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         let type = UISegmentedControl(items:types)
         type.translatesAutoresizingMaskIntoConstraints = false
         type.selectedSegmentIndex = 0
+        type.addTarget(presenter, action:#selector(presenter.updated(type:)), for:.valueChanged)
         view.addSubview(type)
         
         let orderTitle = UILabel()
@@ -78,6 +79,7 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         let order = UISegmentedControl(items:orders)
         order.translatesAutoresizingMaskIntoConstraints = false
         order.selectedSegmentIndex = 0
+        order.addTarget(presenter, action:#selector(presenter.updated(order:)), for:.valueChanged)
         view.addSubview(order)
         
         let search = UISearchBar()
