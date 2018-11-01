@@ -23,6 +23,11 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         checkStatus()
     }
     
+    override func viewWillTransition(to size:CGSize, with coordinator:UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to:size, with:coordinator)
+        collection.collectionViewLayout.invalidateLayout()
+    }
+    
     func searchBar(_:UISearchBar, textDidChange text:String) {
         presenter.updated(query:text)
     }
@@ -31,7 +36,7 @@ UISearchBarDelegate, CLLocationManagerDelegate {
     func collectionView(_:UICollectionView, numberOfItemsInSection:Int) -> Int { return items.count }
     
     func collectionView(_:UICollectionView, layout:UICollectionViewLayout, sizeForItemAt:IndexPath) -> CGSize {
-        return CGSize(width:view.bounds.width, height:120)
+        return CGSize(width:view.bounds.width, height:130)
     }
     
     func collectionView(_:UICollectionView, cellForItemAt index:IndexPath) -> UICollectionViewCell {
@@ -60,7 +65,7 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         typeTitle.text = .local("View.type")
         typeTitle.isUserInteractionEnabled = false
         typeTitle.accessibilityHint = .local("View.typeHint")
-        typeTitle.font = .preferredFont(forTextStyle:.title2)
+        typeTitle.font = .preferredFont(forTextStyle:.title3)
         if #available(iOS 10.0, *) {
             typeTitle.adjustsFontForContentSizeCategory = true
         }
@@ -79,7 +84,7 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         orderTitle.text = .local("View.order")
         orderTitle.isUserInteractionEnabled = false
         orderTitle.accessibilityHint = .local("View.orderHint")
-        orderTitle.font = .preferredFont(forTextStyle:.title2)
+        orderTitle.font = .preferredFont(forTextStyle:.title3)
         if #available(iOS 10.0, *) {
             orderTitle.adjustsFontForContentSizeCategory = true
         }
@@ -126,6 +131,7 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         type.topAnchor.constraint(equalTo:typeTitle.bottomAnchor, constant:5).isActive = true
         type.leftAnchor.constraint(equalTo:view.leftAnchor, constant:5).isActive = true
         type.rightAnchor.constraint(equalTo:view.rightAnchor, constant:-5).isActive = true
+        type.heightAnchor.constraint(equalToConstant:34).isActive = true
         
         orderTitle.topAnchor.constraint(equalTo:type.bottomAnchor, constant:20).isActive = true
         orderTitle.leftAnchor.constraint(equalTo:view.leftAnchor, constant:20).isActive = true
@@ -133,13 +139,13 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         order.topAnchor.constraint(equalTo:orderTitle.bottomAnchor, constant:5).isActive = true
         order.leftAnchor.constraint(equalTo:view.leftAnchor, constant:20).isActive = true
         order.rightAnchor.constraint(equalTo:view.rightAnchor, constant:-20).isActive = true
+        order.heightAnchor.constraint(equalToConstant:34).isActive = true
         
         search.topAnchor.constraint(equalTo:order.bottomAnchor, constant:20).isActive = true
         search.leftAnchor.constraint(equalTo:view.leftAnchor, constant:10).isActive = true
         search.rightAnchor.constraint(equalTo:view.rightAnchor, constant:-10).isActive = true
-        search.heightAnchor.constraint(equalToConstant:36).isActive = true
         
-        collection.topAnchor.constraint(equalTo:search.bottomAnchor, constant:20).isActive = true
+        collection.topAnchor.constraint(equalTo:search.bottomAnchor, constant:10).isActive = true
         collection.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
         collection.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
         

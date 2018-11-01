@@ -39,10 +39,10 @@ class Cell:UICollectionViewCell {
         contentView.addSubview(web)
         self.web = web
         
-        web.topAnchor.constraint(equalTo:topAnchor).isActive = true
-        web.bottomAnchor.constraint(equalTo:bottomAnchor).isActive = true
+        web.topAnchor.constraint(equalTo:topAnchor, constant:10).isActive = true
+        web.bottomAnchor.constraint(equalTo:bottomAnchor, constant:-10).isActive = true
         web.leftAnchor.constraint(equalTo:leftAnchor).isActive = true
-        web.widthAnchor.constraint(equalToConstant:100).isActive = true
+        web.widthAnchor.constraint(equalToConstant:80).isActive = true
         
         text.centerYAnchor.constraint(equalTo:centerYAnchor).isActive = true
         text.leftAnchor.constraint(equalTo:web.rightAnchor, constant:10).isActive = true
