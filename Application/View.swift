@@ -15,7 +15,6 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         makeOutlets()
         presenter.load()
         location.delegate = self
-        location.requestWhenInUseAuthorization()
     }
     
     override func viewDidAppear(_ animated:Bool) {
