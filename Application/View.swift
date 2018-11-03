@@ -14,7 +14,6 @@ UISearchBarDelegate, CLLocationManagerDelegate {
         presenter.itemsUpdated = { [weak self] items in self?.items = items }
         makeOutlets()
         presenter.load()
-        location.delegate = self
     }
     
     override func viewDidAppear(_ animated:Bool) {
